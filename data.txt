@@ -1,0 +1,162 @@
+http://dontpad.com/povoandoobanco
+
+// CLIENTES
+{
+    "cli_id": "0",
+    "cli_nome": "juriscleison",
+    "cli_dt_nasc": "2010-10-10",
+    "cli_cpf": "123456789",
+    "cli_email": "juris@clei.son",
+    "cli_senha": "123456",
+    "aceite_novidades": "true"
+}
+
+{
+    "cli_id": "0",
+    "cli_nome": "gabriel",
+    "cli_dt_nasc": "2002-05-13",
+    "cli_cpf": "65789865",
+    "cli_email": "gab@zap.com",
+    "cli_senha": "897654",
+    "aceite_novidades": "true"
+}
+
+// PROPRIETARIOS
+{
+    "pro_id": "0",
+    "pro_nome": "temudjin",
+    "pro_dt_nasc": "1162-02-25",
+    "pro_cpf": "65789865",
+    "pro_email": "genghis@khan.com",
+    "pro_senha": "65897451",
+    "aceite_novidades": true
+}
+
+{
+    "pro_id": "0",
+    "pro_nome": "caio",
+    "pro_dt_nasc": "2002-09-17",
+    "pro_cpf": "8569741",
+    "pro_email": "caio@guaratingueta.com",
+    "pro_senha": "65897451",
+    "aceite_novidades": true
+}
+
+{
+    "pro_id": "0",
+    "pro_nome": "joao",
+    "pro_dt_nasc": "2002-07-17",
+    "pro_cpf": "45222784",
+    "pro_email": "joao@mbl.com",
+    "pro_senha": "123456789",
+    "aceite_novidades": true
+}
+
+{
+    "pro_id": "0",
+    "pro_nome": "ariel",
+    "pro_dt_nasc": "1996-06-19",
+    "pro_cpf": "478569",
+    "pro_email": "ariel@policiafederal.com",
+    "pro_senha": "123",
+    "aceite_novidades": false
+}
+
+{
+    "pro_id": "0",
+    "pro_nome": "chen",
+    "pro_dt_nasc": "2000-12-04",
+    "pro_cpf": "74589632565",
+    "pro_email": "chen@gigachad.com",
+    "pro_senha": "2564132626",
+    "aceite_novidades": true
+}
+
+// ENDEREÇOS
+{
+    "end_id": "0",
+    "end_logradouro": "rua",
+    "end_numero": "666",
+    "end_bairro": "petersburg",
+    "end_cep": "99900001",
+    "end_cidade": "leningrev",
+    "end_uf": "SP"
+}
+
+{
+    "end_id": "0",
+    "end_logradouro": "rua",
+    "end_numero": "130",
+    "end_bairro": "zap",
+    "end_cep": "456123",
+    "end_cidade": "lorena",
+    "end_uf": "SP"
+}
+
+{
+    "end_id": "0",
+    "end_logradouro": "rua",
+    "end_numero": "698",
+    "end_bairro": "centro",
+    "end_cep": "9658741",
+    "end_cidade": "Nova Iguaçu",
+    "end_uf": "SP"
+}
+
+// ACOMODAÇÕES
+{
+    "aco_id": "0",
+    "aco_nome": "casa da vovo mariana",
+    "aco_descricao": "casa assombriada",
+    "aco_tipo": "casa",
+    "aco_capacidade": 5,
+    "aco_total_notas": "7.20",
+    "aco_qtd_avaliacoes": 5,
+    "aco_nota": "8.0",
+    "aco_capacidade_garagem": 1,
+    "aco_qtd_banheiros": 3,
+    "aco_qtd_quartos": 5,
+    "aco_aquecimento": true,
+    "aco_resfriamento": true,
+    "aco_churrasqueira": false,
+    "aco_fogao": false,
+    "aco_geladeira": true,
+    "aco_televisao": true,
+    "aco_internet": false,
+    "aco_piscina": false,
+    "aco_pet_friendly": true,
+    "aco_politica_cancelamento": true,
+    "aco_checkout_estendido": false,
+    "aco_acessibilidade": false,
+    "pro_id": 1,
+    "end_id": 1
+}
+
+{
+    "aco_id": "0",
+    "aco_nome": "casa da praia",
+    "aco_descricao": "casa localizada na praia de sao sebastiao",
+    "aco_tipo": "casa",
+    "aco_capacidade": 5,
+    "aco_total_notas": "6.40",
+    "aco_qtd_avaliacoes": 4,
+    "aco_nota": "8.0",
+    "aco_capacidade_garagem": 1,
+    "aco_qtd_banheiros": 3,
+    "aco_qtd_quartos": 5,
+    "aco_aquecimento": true,
+    "aco_resfriamento": true,
+    "aco_churrasqueira": false,
+    "aco_fogao": false,
+    "aco_geladeira": true,
+    "aco_televisao": true,
+    "aco_internet": false,
+    "aco_piscina": false,
+    "aco_pet_friendly": true,
+    "aco_politica_cancelamento": true,
+    "aco_checkout_estendido": false,
+    "aco_acessibilidade": false,
+    "pro_id": 2,
+    "end_id": 1
+}
+

@@ -1,2 +1,2 @@
 # reservaai-api-jwt
- primeira versão da minha api com o json web token, já fazendo a autenticação
+REST API com autenticação e autorização.

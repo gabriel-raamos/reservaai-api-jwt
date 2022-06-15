@@ -15,4 +15,4 @@ pm.environment.set("cliToken", pm.response.json().token);
 
 Esse código enviará o token gerado no login ao header "cli" através da variável ambiente "cliToken".
 
-O processo é o mesmo com o proprietário, necessitando apenas a substituição de "cli" por "pro".
+O processo é o mesmo com o proprietário, necessitando apenas a substituição de "cli" por "pro" e "cliToken" por "proToken".

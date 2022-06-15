@@ -1,0 +1,358 @@
+http://dontpad.com/povoandoobanco
+
+// CLIENTES
+{
+    "cli_id": "0",
+    "cli_nome": "juriscleison",
+    "cli_dt_nasc": "2010-10-10",
+    "cli_cpf": "123456789",
+    "cli_email": "juris@clei.son",
+    "cli_senha": "123456",
+    "aceite_novidades": "true"
+}
+
+{
+    "cli_id": "0",
+    "cli_nome": "gabriel",
+    "cli_dt_nasc": "2002-05-13",
+    "cli_cpf": "65789865",
+    "cli_email": "gab@zap.com",
+    "cli_senha": "897654",
+    "aceite_novidades": "true"
+}
+
+// PROPRIETARIOS
+{
+    "pro_id": "0",
+    "pro_nome": "temudjin",
+    "pro_dt_nasc": "1162-02-25",
+    "pro_cpf": "65789865",
+    "pro_email": "genghis@khan.com",
+    "pro_senha": "65897451",
+    "aceite_novidades": true
+}
+
+{
+    "pro_id": "0",
+    "pro_nome": "caio",
+    "pro_dt_nasc": "2002-09-17",
+    "pro_cpf": "8569741",
+    "pro_email": "caio@guaratingueta.com",
+    "pro_senha": "65897451",
+    "aceite_novidades": true
+}
+
+{
+    "pro_id": "0",
+    "pro_nome": "joao",
+    "pro_dt_nasc": "2002-07-17",
+    "pro_cpf": "45222784",
+    "pro_email": "joao@mbl.com",
+    "pro_senha": "123456789",
+    "aceite_novidades": true
+}
+
+{
+    "pro_id": "0",
+    "pro_nome": "ariel",
+    "pro_dt_nasc": "1996-06-19",
+    "pro_cpf": "478569",
+    "pro_email": "ariel@policiafederal.com",
+    "pro_senha": "123",
+    "aceite_novidades": false
+}
+
+{
+    "pro_id": "0",
+    "pro_nome": "chen",
+    "pro_dt_nasc": "2000-12-04",
+    "pro_cpf": "74589632565",
+    "pro_email": "chen@gigachad.com",
+    "pro_senha": "2564132626",
+    "aceite_novidades": true
+}
+
+// ENDEREÇOS
+{
+    "end_id": "0",
+    "end_logradouro": "rua",
+    "end_numero": "666",
+    "end_bairro": "petersburg",
+    "end_cep": "99900001",
+    "end_cidade": "leningrev",
+    "end_uf": "SP"
+}
+
+{
+    "end_id": "0",
+    "end_logradouro": "rua",
+    "end_numero": "130",
+    "end_bairro": "zap",
+    "end_cep": "456123",
+    "end_cidade": "lorena",
+    "end_uf": "SP"
+}
+
+{
+    "end_id": "0",
+    "end_logradouro": "rua",
+    "end_numero": "698",
+    "end_bairro": "centro",
+    "end_cep": "9658741",
+    "end_cidade": "Nova Iguaçu",
+    "end_uf": "SP"
+}
+
+// ACOMODAÇÕES
+{
+    "aco_id": "0",
+    "aco_nome": "casa da vovo mariana",
+    "aco_descricao": "casa assombriada",
+    "aco_tipo": "casa",
+    "aco_capacidade": 5,
+    "aco_total_notas": "7.20",
+    "aco_qtd_avaliacoes": 5,
+    "aco_nota": "8.0",
+    "aco_capacidade_garagem": 1,
+    "aco_qtd_banheiros": 3,
+    "aco_qtd_quartos": 5,
+    "aco_aquecimento": true,
+    "aco_resfriamento": true,
+    "aco_churrasqueira": false,
+    "aco_fogao": false,
+    "aco_geladeira": true,
+    "aco_televisao": true,
+    "aco_internet": false,
+    "aco_piscina": false,
+    "aco_pet_friendly": true,
+    "aco_politica_cancelamento": true,
+    "aco_checkout_estendido": false,
+    "aco_acessibilidade": false,
+    "pro_id": 1,
+    "end_id": 1
+}
+
+{
+    "aco_id": "0",
+    "aco_nome": "casa da praia",
+    "aco_descricao": "casa localizada na praia de sao sebastiao",
+    "aco_tipo": "casa",
+    "aco_capacidade": 5,
+    "aco_total_notas": "6.40",
+    "aco_qtd_avaliacoes": 4,
+    "aco_nota": "8.0",
+    "aco_capacidade_garagem": 1,
+    "aco_qtd_banheiros": 3,
+    "aco_qtd_quartos": 5,
+    "aco_aquecimento": true,
+    "aco_resfriamento": true,
+    "aco_churrasqueira": false,
+    "aco_fogao": false,
+    "aco_geladeira": true,
+    "aco_televisao": true,
+    "aco_internet": false,
+    "aco_piscina": false,
+    "aco_pet_friendly": true,
+    "aco_politica_cancelamento": true,
+    "aco_checkout_estendido": false,
+    "aco_acessibilidade": false,
+    "pro_id": 2,
+    "end_id": 1
+}
+
+
+{
+// TESTE JWT
+// require('dotenv-safe').config();
+const jwt = require('jsonwebtoken');
+const bcrypt = require('bcrypt');
+
+app.get('/clientes', (req, res, next) => { 
+    console.log("Retornou todos clientes!");
+    res.json([{id:1,nome:'luiz'}]);
+}) 
+
+app.post('/login', (req,res,next) => {
+
+    const {user, password} = req.body;
+    
+    // esse usuário deverá vir do banco de dados
+    if(user === 'luiz' && password === '123'){
+        //auth ok
+        const id = 1; //esse id viria do banco de dados
+        const token = jwt.sign({ id }, 'mysecrets', {
+          expiresIn: 300 // expires in 5min
+        });
+        return res.json({ auth: true, token: token });
+      }
+    res.status(500).json({message: 'login inválido.'})
+})
+
+app.post('/logout', (req,res) => {
+    res.json({ auth: false, token: null})
+})
+
+verifyJWT = (req, res, next) => {
+    const token = req.headers['token'];
+    if (!token) {
+        return res.status(401).json({ auth: false, message: 'No token provided.' });
+    }
+    
+    jwt.verify(token, 'mysecrets', function(err, decoded) {
+      if (err) {
+        return res.status(500).json({ auth: false, message: 'Failed to authenticate token.' });
+      }
+
+      req.userId = decoded.id;
+      next();
+    });
+}
+
+app.get('/clientes', verifyJWT, (req, res, next) => { 
+    console.log("AAAAAAAAAAAAAAAA");
+    res.json([{id:1,nome:'luiz'}]);
+})
+
+const dadosUsuario = {
+    nome: "marcelo",
+    email: "teste@gmail.com",
+    id: 1
+};
+
+app.get('/opa', (req,res) => {
+    //const {usuario, senha} = req.body;
+
+    let token = req.headers.token;
+    var decoded = jwt.verify(token, 'mysecrets');
+    res.send(JSON.stringify(decoded));
+})
+
+//const {usuario, senha} = req.body;
+
+const usuario = "";
+const senha = "";
+
+app.post('/zap', (req,res) => {
+    if (req.body.usuario === 'gabriel' && req.body.senha === '123' ) {
+        const id = 1;
+
+        /* const token = jwt.sign({usuario, senha}, 'mysecrets', {
+            expiresIn: 5000
+        }) */
+
+        const token = jwt.sign({id}, 'mysecrets', {
+            expiresIn: 5000
+        })
+
+        return res.json({auth: true, token: token})
+    }
+    res.status(500).json({message: 'login inválido!'});
+})
+
+app.get('/postzap', (req,res) => {
+    const token_header = req.headers['token'];
+
+    if (!token_header) {
+        return res.status(401).json({ auth: false, message: 'TOKEN NÃO REBECIDO' });
+    }
+
+    jwt.verify(token_header, 'mysecrets', (err,decoded) => {
+        if (err) {
+            return res.status(500).json({ auth: false, message: 'TOKEN NÃO AUTENTICADO' });
+        }
+
+        // req.userId = decoded.id;
+
+        console.log("User Id: " + decoded.id)
+        res.json({message: 'whatsapp'})
+    })
+})
+}
+
+
+
+// ------------ --------------
+
+
+
+
+/* exports.verificarJWT = (req,res) => {
+  var readtoken = req.headers['cli'];
+
+  if (!readtoken) {
+    return res.json({auth: false})
+  }
+
+  jwt.verify(readtoken, 'mysecrets', (err, data) => {
+    if (data) {
+      res.json(data);
+  } else if (err) {
+      res.json('Ocorreu um erro')
+  }
+  })
+
+} */
+
+/* exports.JWTfindone = (req,res) => {
+    var readtoken = req.headers['cli'];
+
+    if (!readtoken) {
+    return res.json({auth: false})
+    }
+
+    jwt.verify(readtoken, 'mysecrets', (err, decod) => {
+    if (decod) {
+        id = req.params.id;
+        Cliente.findByPk(id, {
+            attributes: ['cli_nome','cli_email']
+        })
+        .then(data => {
+            if (data) {
+                res.send(data);
+            } else {
+                res.status(404).send(`Não foi possível encontrar um cliente com o id ${id}`)
+            }
+        })
+        .catch(err => {
+            res.status(500).send({
+                message: err.message || 'Ocorreu um erro.'
+            })
+        })
+        
+    } else {
+        res.json({message: err.message || 'houve um problema'})
+    }
+        
+
+  })    
+
+} */
+
+/* exports.JWTfindall = (req,res) => {
+    var readtoken = req.headers['cli'];
+
+    if (!readtoken) {
+    return res.json({auth: false})
+    }
+
+    jwt.verify(readtoken, 'mysecrets', (err, decod) => {
+    if (decod) {
+        Cliente.findAll({
+            attributes: ['cli_nome','cli_email']
+        })
+        .then(data => {
+            res.send(data)
+        })
+        .catch(err => {
+            res.status(500).send({
+                message: err.message || 'Ocorreu um erro.'
+            })
+        })
+        
+    } else {
+        res.json({message: err.message || 'houve um problema'})
+    }
+        
+
+  }) 
+} */

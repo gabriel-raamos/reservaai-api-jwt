@@ -15,19 +15,13 @@ exports.create = (req,res) => {
         cli_dt_nasc: req.body.cli_dt_nasc,
         cli_cpf: req.body.cli_cpf,
         cli_email: req.body.cli_email,
-        cli_senha: this.teste,
+        cli_senha: req.body.cli_senha,
         aceite_novidades: req.body.aceite_novidades
     }
-
-    teste = () => {
-        req.body.cli_senha;
-
-        bcrypt.hash(cliente.cli_senha, 8, (err,hash) => {
-            console.log(hash);
-        })
-    }
-
+    
+    // cliente.cli_senha = bcrypt.hash(cliente.cli_senha, 8)
     Cliente.create(cliente)
+    
     .then(data => {
         res.send(data)
     })

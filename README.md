@@ -4,7 +4,7 @@ REST API com autenticação e autorização.
 Para a sua execução, é necessário apenas rodar os seguintes códigos no client MySQL:
 - create database reservaai;
 - create user 'pi'@'localhost' identified by 'password';
-- grant all privileges on *.* to 'pi'@'localhost';
+- grant all privileges on * . * to 'pi'@'localhost';
 
 Isso é necessário pois, para criar as tabelas no banco de dados, o Sequelize precisa reconhecer um banco e um usuário que estejam cadastrados no arquivo config/database.config.js.
 
